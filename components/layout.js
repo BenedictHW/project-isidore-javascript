@@ -3,7 +3,7 @@ import Head from "next/head";
 import styles from "./layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
-import { Navbar, Nav } from "react-bootstrap";
+import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 
 const name = "Hanshen Wang";
 export const siteTitle = "HanshenWang.com";
@@ -11,23 +11,51 @@ export const siteTitle = "HanshenWang.com";
 export default function Layout({ children, home, notesPage, blogPage }) {
   return (
     <React.Fragment>
-      <Navbar className="colorNavbar" sticky="top">
+      <Navbar className={styles.colorNavbar} sticky="top">
+        <NavDropdown
+          /* https://stackoverflow.com/questions/43479577/add-a-image-to-react-bootstrap-dropdown */
+          title={
+            <svg viewBox="0 0 100 80" width="20" height="20">
+              <rect width="100" height="15"></rect>
+              <rect y="30" width="100" height="15"></rect>
+              <rect y="60" width="100" height="15"></rect>
+            </svg>
+          }
+          className={styles.hamburgerNav}
+        >
+          <NavDropdown.Item href="/about" className={styles.hamburgerNav}>
+            About
+          </NavDropdown.Item>
+          <NavDropdown.Item href="/work" className={styles.hamburgerNav}>
+            Work
+          </NavDropdown.Item>
+          <NavDropdown.Item href="/blog" className={styles.hamburgerNav}>
+            Blog
+          </NavDropdown.Item>
+          <NavDropdown.Item href="/contact" className={styles.hamburgerNav}>
+            Contact
+          </NavDropdown.Item>
+          <NavDropdown.Divider />
+          <NavDropdown.Item href="/" className={styles.hamburgerNav}>
+            Home Page
+          </NavDropdown.Item>
+        </NavDropdown>
         <Navbar.Brand href="/" className={utilStyles.headingNavbar}>
           Hanshen Wang
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="/about" className={utilStyles.titleNavbar}>
+            <Nav.Link href="/about" className={styles.titleNavbar}>
               About
             </Nav.Link>
-            <Nav.Link href="/work" className={utilStyles.titleNavbar}>
+            <Nav.Link href="/work" className={styles.titleNavbar}>
               Work
             </Nav.Link>
-            <Nav.Link href="/blog" className={utilStyles.titleNavbar}>
+            <Nav.Link href="/blog" className={styles.titleNavbar}>
               Blog
             </Nav.Link>
-            <Nav.Link href="/contact" className={utilStyles.titleNavbar}>
+            <Nav.Link href="/contact" className={styles.titleNavbar}>
               Contact
             </Nav.Link>
             {notesPage && (
@@ -95,10 +123,9 @@ export default function Layout({ children, home, notesPage, blogPage }) {
         )}
       </div>
       <style jsx global>{`
-        .colorNavbar {
-          background-color: #eee8d5;
-          /* https://www.sitepoint.com/community/t/can-you-help-me-with-my-navigation-bar/9619/6 */
-          overflow: hidden;
+        /* https://stackoverflow.com/questions/50970773/change-color-background-color-of-navdropdown-in-react-bootstrap */
+        div.dropdown-menu.show {
+          background-color: #eee8d5; // for drop down menu color
         }
       `}</style>
     </React.Fragment>
