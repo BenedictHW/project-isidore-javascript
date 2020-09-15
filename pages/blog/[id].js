@@ -12,6 +12,10 @@ export default function Post({ postData }) {
     <Layout blogPage>
       <Head>
         <title>{postData.title}</title>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, user-scalable=no"
+        />
       </Head>
       <article>
         <h1 className={utilStyles.headingArticle}>{postData.title}</h1>
