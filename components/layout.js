@@ -30,9 +30,28 @@ export default function Layout({ children, home, notesPage, blogPage }) {
             <Nav.Link href="/contact" className={utilStyles.titleNavbar}>
               Contact
             </Nav.Link>
-            <Nav.Link href="#top" className={utilStyles.headingNavbar}>
-              Back to Top
-            </Nav.Link>
+            {notesPage && (
+              <Nav.Link href="#top" className={utilStyles.headingNavbar}>
+                <img
+                  src="/images/uparrow.svg"
+                  width="20"
+                  height="20"
+                  /* className="d-inline-block align-top" */
+                  alt="Goto Top"
+                />
+              </Nav.Link>
+            )}
+            {blogPage && (
+              <Nav.Link href="#top" className={utilStyles.headingNavbar}>
+                <img
+                  src="/images/uparrow.svg"
+                  width="20"
+                  height="20"
+                  /* className="d-inline-block align-top" */
+                  alt="Goto Top"
+                />
+              </Nav.Link>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Navbar>
