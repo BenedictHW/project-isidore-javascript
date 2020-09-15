@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap');
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background-color: #FDF6E3;
+  z-index: -99;
+}
+
+wrapper {
+  min-height: 100%;
+}
+
+p,li,ol{
+  font-family: 'Merriweather', serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+  color: #586E75;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Merriweather', serif;
+  font-size: 1.75rem;
+  font-weight: 400;
+  line-height:3;
+  color: #002B36;
+}
+
+pre{
+  border-radius: 5px;
+  background-color: #FBF8EF;
+  font-size: 1.5rem;
+  color: #073642;
+}
