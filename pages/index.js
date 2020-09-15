@@ -2,13 +2,11 @@ import React from "react";
 import Head from "next/head";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
-// https://www.npmjs.com/package/react-fade-in
-import FadeIn from "react-fade-in";
 import { Button, Carousel, Container, Row, Col } from "react-bootstrap";
 // https://www.npmjs.com/package/react-typist-loop
 import Typist from "react-typist";
 // https://github.com/jstejada/react-typist/issues/6
-import FadeExample from "../components/slideshow";
+import BgFade from "../components/slideshow";
 
 const words = [
   "Hello!",
@@ -47,82 +45,80 @@ export default function IndexPage() {
           content="width=device-width, initial-scale=1, user-scalable=no"
         />
       </Head>
-      <FadeExample />
-      <FadeIn transitionDuration={3333}>
-        <Container className="portfolioContent">
-          <Row>
-            <Col>
-              <img
-                src="/images/profile.jpg"
-                className="portfolioProfile"
-                alt={"Author Profile Picture"}
-              />
-            </Col>
-            <Col>
-              <Typist>
-                {words.map((word, i) => (
-                  <span key={word} className={utilStyles.heading2Xl}>
-                    {word}
-                    <Typist.Backspace count={word.length} delay={2000} />
-                  </span>
-                ))}
-              </Typist>
-              <br></br>
-              <h1 className={utilStyles.headingPortfolio}>
-                I’m Hanshen. <br /> Nice to meet you.
-              </h1>
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <h3 className="portfolioIntro">
-                Welcome to my personal website! This website was built with
-                <a
-                  className="portfolioLink"
-                  href="https://nextjs.org"
-                  target="_blank"
-                >
-                  {" "}
-                  Next.js{" "}
-                </a>{" "}
-                and React. My resume can be found under the work tab. I hope you
-                find what you're looking for, and may the wind be always at your
-                back.
-              </h3>
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <Button className="portfolioButton" variant="outline-light">
-                <Link href={"/about"}>
-                  <h2 className={utilStyles.headingLg}>About</h2>
-                </Link>
-              </Button>
-            </Col>
-            <Col>
-              <Button className="portfolioButton" variant="outline-light">
-                <Link href={"/work"}>
-                  <h2 className={utilStyles.headingLg}>Work</h2>
-                </Link>
-              </Button>
-            </Col>
-            <Col>
-              <Button className="portfolioButton" variant="outline-light">
-                <Link href={"/blog"}>
-                  <h2 className={utilStyles.headingLg}>Blog</h2>
-                </Link>
-              </Button>
-            </Col>
-            <Col>
-              <Button className="portfolioButton" variant="outline-light">
-                <Link href={"/contact"}>
-                  <h2 className={utilStyles.headingLg}>Contact</h2>
-                </Link>
-              </Button>
-            </Col>
-          </Row>
-        </Container>
-      </FadeIn>
+      <BgFade />
+      <Container className="portfolioContent">
+        <Row>
+          <Col>
+            <img
+              src="/images/profile.jpg"
+              className="portfolioProfile"
+              alt={"Author Profile Picture"}
+            />
+          </Col>
+          <Col>
+            <Typist>
+              {words.map((word, i) => (
+                <span key={word} className={utilStyles.heading2Xl}>
+                  {word}
+                  <Typist.Backspace count={word.length} delay={2000} />
+                </span>
+              ))}
+            </Typist>
+            <br></br>
+            <h1 className={utilStyles.headingPortfolio}>
+              I’m Hanshen. <br /> Nice to meet you.
+            </h1>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <h3 className="portfolioIntro">
+              Welcome to my personal website! This website was built with
+              <a
+                className="portfolioLink"
+                href="https://nextjs.org"
+                target="_blank"
+              >
+                {" "}
+                Next.js{" "}
+              </a>{" "}
+              and React. My resume can be found under the work tab. I hope you
+              find what you're looking for, and may the wind be always at your
+              back.
+            </h3>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Button className="portfolioButton" variant="outline-light">
+              <Link href={"/about"}>
+                <h2 className={utilStyles.headingLg}>About</h2>
+              </Link>
+            </Button>
+          </Col>
+          <Col>
+            <Button className="portfolioButton" variant="outline-light">
+              <Link href={"/work"}>
+                <h2 className={utilStyles.headingLg}>Work</h2>
+              </Link>
+            </Button>
+          </Col>
+          <Col>
+            <Button className="portfolioButton" variant="outline-light">
+              <Link href={"/blog"}>
+                <h2 className={utilStyles.headingLg}>Blog</h2>
+              </Link>
+            </Button>
+          </Col>
+          <Col>
+            <Button className="portfolioButton" variant="outline-light">
+              <Link href={"/contact"}>
+                <h2 className={utilStyles.headingLg}>Contact</h2>
+              </Link>
+            </Button>
+          </Col>
+        </Row>
+      </Container>
       <style jsx global>{`
         /* https://css-tricks.com/perfect-full-page-background-image/ */
 

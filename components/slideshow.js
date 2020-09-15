@@ -2,7 +2,7 @@ import React from "react";
 import { Fade } from "react-slideshow-image";
 import slide from "react-slideshow-image/dist/styles.css";
 
-const FadeExample = () => {
+const BgFade = () => {
   const fadeImages = [
     "images/pic1.jpg",
     "images/pic2.jpg",
@@ -158,4 +158,4 @@ const FadeExample = () => {
   );
 };
 
-export default FadeExample;
+export default BgFade;
