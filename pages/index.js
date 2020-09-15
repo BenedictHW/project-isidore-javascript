@@ -39,6 +39,7 @@ export default function IndexPage() {
   return (
     <React.Fragment>
       <Head>
+        <link rel="icon" href="/images/favicon.ico" />
         <title>HanshenWang.com</title>
         <meta
           name="viewport"
@@ -165,7 +166,7 @@ export default function IndexPage() {
         .portfolioProfile {
           width: 175px;
           height: 175px;
-          margin: 0rem 5rem;
+          margin: 0rem 3rem 1rem 3rem;
           border-radius: 9999px;
         }
         /* https://css-tricks.com/forums/topic/horizontal-centering-of-an-absolute-element/ */
