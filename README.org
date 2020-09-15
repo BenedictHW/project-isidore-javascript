@@ -1,8 +1,14 @@
 * Hanshen Wang's Website
-  Built with next.js and react-boostrap.
+  Built with next.js and react-boostrap. See [[hanshenwang.com]].
 
 
 
+
+---
+
+My parts of this web site are licensed under [[https://creativecommons.org/licenses/by/4.0/][CC BY 4.0]].
+
+[[https://i.creativecommons.org/l/by/4.0/88x31.png][https://creativecommons.org/licenses/by/4.0/]]
 
 
 
