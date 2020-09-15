@@ -6,8 +6,8 @@ date: "2021-02-04"
 # Table of Contents
 
 1.  [Introduction](#orgc9a03ad)
-    1.  [Install Microsoft Windows Subsystem for Linux (WSL) & Your Linux Distribution](#org08c9768):ATTACH:
-    2.  [Install X Server](#orgaab4b1b):ATTACH:
+    1.  [Install Microsoft Windows Subsystem for Linux (WSL) & Your Linux Distribution](#org08c9768)
+    2.  [Install X Server](#orgaab4b1b)
     3.  [Install Spacemacs](#orgbe61ec3)
         1.  [Fixing the Font](#orga4d08b7)
     4.  [How WSL (Ubuntu) files are treated by Windows](#org34f4b1c)
@@ -42,15 +42,15 @@ Compare your Windows version with the below
 
 <a id="org08c9768"></a>
 
-## Install Microsoft Windows Subsystem for Linux (WSL) & Your Linux Distribution     :ATTACH:
+## Install Microsoft Windows Subsystem for Linux (WSL) & Your Linux Distribution     
 
-I feel obliged to point out that there exist multiple popular ways of installing Emacs on a Windows machine. You may compile Emacs source code and run it "natively" through [Cygwin](https://www.cygwin.com/). Another option is to run a virtual linux machine and install Emacs from there. Because installing natively would mean more workarounds in the future when dealing with external software and also because WSL offers better system call compatibility, I elected to go down the more well trodden path of running Emacs on Ubuntu through WSL. In the simplest terms, WSL is a lightweight virtual machine (emulates the OS) that allows you to use linux kernels to run linux apps in Windows *without* dual booting. This info graphic may also come in handy.
+I feel obliged to point out that there exist multiple popular ways of installing Emacs on a Windows machine. You may compile Emacs source code and run it "natively" through [Cygwin](https://www.cygwin.com/). Another option is to run a virtual linux machine and install Emacs from there. Because installing natively would mean more workarounds in the future when dealing with external software and also because WSL offers better system call compatibility, I elected to go down the more well trodden path of running Emacs on Ubuntu through WSL. In the simplest terms, WSL is a lightweight virtual machine (emulates the OS) that allows you to use linux kernels to run linux apps in Windows *without* dual booting.
 
 First, install the Microsoft Windows Subsystem for Linux version 2. WSL 2 is recommended over WSL 1 Unless you plan on using Lennox commandline on files stored in the Native Windows file system instead of the WSL filesystem. I will go into more detail later, but the WSL filesystem is accessible in Windows Explorer and shows up as a network drive. If you are unsure, go with WSL2.  [This process is already documented by Microsoft (includes troubleshooting guidelines).](https://docs.microsoft.com/en-us/windows/wsl/install-win10#step-1---enable-the-windows-subsystem-for-linux) Repeated here for completion's sake:
 
 Enable the windows feature called "Windows subsystem for Linux" by either checking the box in the GUI screen. You can get there by searching "Turn Windows features on or off" in the control panel search box. Do the same for the check box titled "virtual machine platform". you can enable these 2 features via the shell as well.
 
-![img](/home/hanshen/project-jerome/org-attach-data/images-2021/enable-wsl.png)
+![img](/images/2021/enable-wsl.png)
 
 OR open the power shell as administrator and run:
 
@@ -79,7 +79,7 @@ Now you can go to the window store and download your preferred lytics distributi
 
 <a id="orgaab4b1b"></a>
 
-## Install X Server     :ATTACH:
+## Install X Server     
 
 This is the software that allows linux to display GUI elements. You have many options here: 
 
@@ -89,7 +89,7 @@ This is the software that allows linux to display GUI elements. You have many op
 
 I have chosen Vcxsrv. Simple installation and configuration. [Download and run the sourceforge installer and you can launch the program by the "Xlaunch" shortcut.](https://sourceforge.net/projects/vcxsrv/) No need to change any of the settings. Click next until the end and you should see a system tray icon similar to an X. Feel free to add the "X Launch" shortcut to your Windows (Win + R) <startup>  folder.
 
-![img](/home/hanshen/project-jerome/org-attach-data/images-2021/vcxsrv.png)    
+![img](/images/2021/vcxsrv.png)    
 
 The last step before launching is to configure your X Server correctly. In the WSL terminal, export the DISPLAY variable. 
 
