@@ -19,6 +19,8 @@ export default function NotesIndex({ allNotesData }) {
         <h2 className={utilStyles.headingMd}>
           <h1>Notes</h1>
         </h2>
+        {/* Remove this when you upload your first notes !!! */}
+        <p>No notes yet, check back later!</p>
         <ul className={utilStyles.list}>
           {allNotesData.map(({ id, date, title }) => (
             <li className={utilStyles.listItem} key={id}>
