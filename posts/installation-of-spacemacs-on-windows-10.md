@@ -44,7 +44,7 @@ Compare your Windows version with the below
 
 ## Install Microsoft Windows Subsystem for Linux (WSL) & Your Linux Distribution     
 
-I feel obliged to point out that there exist multiple popular ways of installing Emacs on a Windows machine. You may compile Emacs source code and run it "natively" through [Cygwin](https://www.cygwin.com/). Another option is to run a virtual linux machine and install Emacs from there. Because installing natively would mean more workarounds in the future when dealing with external software and also because WSL offers better system call compatibility, I elected to go down the more well trodden path of running Emacs on Ubuntu through WSL. In the simplest terms, WSL is a lightweight virtual machine (emulates the OS) that allows you to use linux kernels to run linux apps in Windows *without* dual booting.
+I feel obliged to point out that there exist multiple popular ways of installing Emacs on a Windows machine. You may compile Emacs source code and run it "natively" through [Cygwin](https://www.cygwin.com/). Another option is to run a virtual linux machine and install Emacs from there. Because installing natively would mean more workarounds in the future when dealing with external software and also because WSL offers better system call compatibility, I elected to go down the more well trodden path of running Emacs on Ubuntu through WSL. In the simplest terms, WSL is a very lightweight virtual machine that allows you to use linux kernels to run linux apps in Windows *without* dual booting.
 
 First, install the Microsoft Windows Subsystem for Linux version 2. WSL 2 is recommended over WSL 1 Unless you plan on using Lennox commandline on files stored in the Native Windows file system instead of the WSL filesystem. I will go into more detail later, but the WSL filesystem is accessible in Windows Explorer and shows up as a network drive. If you are unsure, go with WSL2.  [This process is already documented by Microsoft (includes troubleshooting guidelines).](https://docs.microsoft.com/en-us/windows/wsl/install-win10#step-1---enable-the-windows-subsystem-for-linux) Repeated here for completion's sake:
 
@@ -170,18 +170,18 @@ If you get a message informing you that "adobe source code pro" cannot be found,
 
 Author has created symbolic links to make filesystem navigation more simple. Without symbolic links, your Windows files are accessible through "*/mnt/c*" from the Ubuntu root directory. 
 
-    $ ln -s /mnt/c/Users/Hanshen/Documents/ ~/
-    $ ln -s /mnt/c/Users/Hanshen/Downloads/ ~/
-    $ ln -s /mnt/c/Users/Hanshen/Pictures/ ~/
-    $ ln -s /mnt/c/Users/Hanshen/Music/ ~/
-    $ ln -s /mnt/c/Users/Hanshen/Videos/ ~/
+      ln -s /mnt/c/Users/Hanshen/Documents/ ~/
+      ln -s /mnt/c/Users/Hanshen/Downloads/ ~/
+      ln -s /mnt/c/Users/Hanshen/Pictures/ ~/
+      ln -s /mnt/c/Users/Hanshen/Music/ ~/
+      ln -s /mnt/c/Users/Hanshen/Videos/ ~/
 
 
 <a id="orgb6dd1ae"></a>
 
 ## Getting Comfortable with Spacemacs
 
-A couple of first steps to get yourself grounded. Take caution, however, to avoid the dreaded Emacs pinkie. Repetitive strain injury and carpal tunnel are painful and debilitating. Personally, I have made the following changes to my keyboard layout to make it more ergonomic. The benefits spill over to applications outside of Emacs as well. To do so:
+A couple of first steps to get yourself grounded. Makre sure you take caution to avoid the dreaded Emacs pinkie. Repetitive strain injury and carpal tunnel are painful and debilitating. Personally, I have made the following changes to my keyboard layout to make it more ergonomic. The benefits spill over to applications outside of Emacs as well. To do so:
 
 1.  [Install Microsoft PowerToys](https://github.com/microsoft/PowerToys)
 2.  Under the Keyboard Remapper, swap right ctrl and right alt.
@@ -225,36 +225,36 @@ If you have found a useful Emacs package, the installation differs slightly than
 
 Now if your package is not already pre-configured in a layer, it is most likely either on MELPA or Github. If it is a local package, I'm afraid you'll have to consult the README.md found in ~/.emacs.d/private/local . In fact, that README contains all the information we need for all three use cases above. Quoted below:
 
-> 1.  For a local package:
->     
->     -   Load the file explicitly, using the full path to the file, by placing a
->     
->     \`(load "~/.emacs.d/private/local/package-name")\` within the body of the
->     \`dotspacemacs/user-config\` function of your dotspacemacs file.
->     
->     -   Alternatively create a directory with the name of the package in the
->     
->     \`.emacs.d/private/local\` directory, and add that directory to the load-path
->     variable by adding \`(some-package :location local)\` to the list
->     \`dotspacemacs-additional-packages\` within the \`dotspacemacs/layers\` function
->     of your dotspacemacs file. After placing your package file into this
->     package-directory the file can be loaded, without requiring the full path, by
->     placing a \`(require 'package-name)\` within the body of the
->     \`dotspacemacs/user-config\` function of your dotspacemacs file.
-> 
-> 2.  If the package is on (M)ELPA simply add the package name to the list
->     \`dotspacemacs-additional-packages\` in your dotspacemacs file
-> 
-> 3.  For a package hosted on github the recipe for github packages can be used i.e. add
-> 
-> \`\`\`
-> (some-package :location (recipe
-> :fetcher github
-> :repo "some/repo"))
-> \`\`\`
-> 
-> to the list \`dotspacemacs-additional-packages\` in your dotspacemacs file.
-
+     1.  For a local package:
+         
+         -   Load the file explicitly, using the full path to the file, by placing a
+         
+         \`(load "~/.emacs.d/private/local/package-name")\` within the body of the
+         \`dotspacemacs/user-config\` function of your dotspacemacs file.
+         
+         -   Alternatively create a directory with the name of the package in the
+         
+         \`.emacs.d/private/local\` directory, and add that directory to the load-path
+         variable by adding \`(some-package :location local)\` to the list
+         \`dotspacemacs-additional-packages\` within the \`dotspacemacs/layers\` function
+         of your dotspacemacs file. After placing your package file into this
+         package-directory the file can be loaded, without requiring the full path, by
+         placing a \`(require 'package-name)\` within the body of the
+         \`dotspacemacs/user-config\` function of your dotspacemacs file.
+     
+     2.  If the package is on (M)ELPA simply add the package name to the list
+         \`dotspacemacs-additional-packages\` in your dotspacemacs file
+     
+     3.  For a package hosted on github the recipe for github packages can be used i.e. add
+     
+     \`\`\`
+     (some-package :location (recipe
+     :fetcher github
+     :repo "some/repo"))
+     \`\`\`
+     
+     to the list \`dotspacemacs-additional-packages\` in your dotspacemacs file.
+    
 There is no substitute for reading the documentation of the package. Or the source code itself. Luckily, the package we are about to customize makes the latter task slightly easier. Let us pretend we want to customize a variable in our dotspacemacs file. Before we do that, let's switch to the ~/.spacemacs (dotspacemacs) file buffer with "SPC b b".  
 
 One important point to keep in mind is that all key bindings are simply calling a command. From the code and package docs we can see that "helpful-variable" is a command. To run any interactive function in Emacs, we will use M-x ("alt-x" or the spacemacs way: "SPC SPC") and type in "helpful-variable". Before we run it by hitting RET (enter), we notice &#x2013; thanks to helm, an emacs completion package &#x2013; that the keybinding already set for that command is "C-h v". Good to know. Press ESC to exit.
@@ -271,16 +271,18 @@ In our dotspacemacs file let's press "SPC s s" and type in "dotspacemacs-themes"
 
 ## Conclusion
 
-So there you have it. The universality and power of vim's modal editing combined with the endless flexibility of a lisp interpreter. Made "modern" and accessible thanks to the blood, sweat and tears of open-source contributors. Where to go from here?
+So there you have it. The universality and power of vim's modal editing combined with the endless flexibility of a lisp interpreter. Made "modern" and accessible thanks to the blood, sweat, tears and smarts of open-source contributors. Where to go from here?
 
 -   Install the appropriate layer for your favourite language and get working.
 -   Explore what are often called the "killer features" of emacs: [org-mode and magit.](https://www.youtube.com/watch?v=S4f-GUxu3CY&list=PLd_Oyt6lAQ8RgaMN3JnmZjxhPZ8jU34fP)
 -   If you haven't already heard of it, try the [browser extension Vimium](https://addons.mozilla.org/en-CA/firefox/addon/vimium-ff/) to browse the web with vim keybindings.
--   Familiarize your self Emacs Lisp or perhaps even [Common Lisp](http://lispcookbook.github.io/cl-cookbook/)?
+-   Familiarize your self with Emacs Lisp or perhaps even [Common Lisp](http://lispcookbook.github.io/cl-cookbook/)?
     -   A no-nonsense "hit the ground running" intro - [Stevey's Blog Rants: Emergency Elisp](http://steve-yegge.blogspot.com/2008/01/emergency-elisp.html)
-    -   GNU Manual - <https://www.gnu.org/software/emacs/manual/html_node/eintr/>
+    -   GNU Intro to Elisp Manual - <https://www.gnu.org/software/emacs/manual/html_node/eintr/>
+-   [A much more powerful version of Jupyter notebooks](https://news.ycombinator.com/item?id=16842786) once you get familiar with Emacs. In particular, this is thanks to [the org-babel package.](https://rgoswami.me/posts/jupyter-orgmode/) 
+-   Fear of missing out on the freshest news in the Emacs sphere? [Sacha Chua has got you covered.](https://sachachua.com/blog/emacs/)
 
-Once you get comfortable enough, you may even want to remove spacemacs and roll your own custom configuration. My thoughts on future blog posts include a showcase of three org-mode packages which are particularly dear to my heart: org-brain, org-agenda, and org-babel. I hope this tutorial has helped you, and have a wonderful day.
+Once you get comfortable enough, you may even want to remove spacemacs and roll your own custom configuration. There is, however, no rush at all. My thoughts on future blog posts include a showcase of three org-mode packages which are particularly dear to my heart: org-brain, org-agenda, and org-babel. I hope this tutorial has helped you, and have a wonderful day.
 
 
 <a id="org097ba94"></a>

@@ -31,7 +31,7 @@ const words = [
   "Dia dhuit",
 ];
 
-for (let i = 20; i < 2000; i++) {
+for (let i = 20; i < 40; i++) {
   words[i] = words[i - 20];
 }
 
