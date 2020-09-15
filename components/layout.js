@@ -12,7 +12,7 @@ export default function Layout({ children, home, notesPage, blogPage }) {
   return (
     <React.Fragment>
       <Navbar className="colorNavbar" sticky="top">
-        <Navbar.Brand href="/" className={utilStyles.headingNavbar}>
+        <Navbar.Brand href="/" className={utilStyles.titleNavbar}>
           Hanshen Wang
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -61,6 +61,13 @@ export default function Layout({ children, home, notesPage, blogPage }) {
           <div className={styles.backToHome}>
             <Link href="/notes">
               <a>← Back to Notes List</a>
+            </Link>
+          </div>
+        )}
+        {home && (
+          <div className={styles.backToHome}>
+            <Link href="/">
+              <a>← Back to Home</a>
             </Link>
           </div>
         )}

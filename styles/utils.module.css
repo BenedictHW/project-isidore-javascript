@@ -54,6 +54,18 @@
   font-weight: 500;
   font-size: 1.25rem;
 }
+@media screen and (min-width: 0px) and (max-width: 800px) {
+  .titleNavbar{
+    display:none;
+  }
+}
+@media screen and (min-width: 801px) {
+  .titleNavbar{
+    font-family: 'Cinzel', serif;
+    font-weight: 500;
+    font-size: 1.25rem;
+  }
+}
 .headingPortfolio{
   font-family: 'Cinzel', serif;
   font-size: 2rem;

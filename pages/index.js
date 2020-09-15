@@ -13,7 +13,7 @@ const words = [
   "Bonjour,",
   "你好",
   "¡Hola!",
-  "Здравствуйте",
+  "Привет",
   "Welcome!",
   "Salve",
   "こんにちは",
@@ -73,6 +73,7 @@ export default function IndexPage() {
         </Row>
         <Row>
           <Col>
+            <div className="nav-bar" />
             <h3 className="portfolioIntro">
               Welcome to my personal website! This website was built with
               <a
@@ -166,7 +167,7 @@ export default function IndexPage() {
         .portfolioProfile {
           width: 175px;
           height: 175px;
-          margin: 0rem 3rem 1rem 3rem;
+          margin: 0rem auto;
           border-radius: 9999px;
         }
         /* https://css-tricks.com/forums/topic/horizontal-centering-of-an-absolute-element/ */
@@ -205,6 +206,13 @@ export default function IndexPage() {
         }
         span {
           color: white;
+        }
+        .nav-bar {
+          width: 100%;
+          height: 100px;
+          margin: -5rem 0rem 0rem 0rem;
+          padding: 0;
+          border-bottom: 2px solid rgba(255, 255, 255, 0.75);
         }
         .Typist .Cursor {
           display: inline-block;
