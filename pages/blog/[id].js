@@ -5,6 +5,7 @@ import Date from "../../components/date";
 import utilStyles from "../../styles/utils.module.css";
 import styles from "../../components/layout.module.css";
 import Link from "next/link";
+import Comments from "../../components/comments";
 
 export default function Post({ postData }) {
   return (
@@ -35,6 +36,7 @@ export default function Post({ postData }) {
         <hr />
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
+      <Comments />
     </Layout>
   );
 }
