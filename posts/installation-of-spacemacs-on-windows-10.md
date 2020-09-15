@@ -1,6 +1,7 @@
 ---
 title: "Installation of Spacemacs on Windows 10 via WSL2"
 date: "2021-02-04"
+updated: "Updated: March 24, 2021"
 ---
 
 # Table of Contents
@@ -49,8 +50,6 @@ I feel obliged to point out that there exist multiple popular ways of installing
 First, install the Microsoft Windows Subsystem for Linux version 2. WSL 2 is recommended over WSL 1 Unless you plan on using Lennox commandline on files stored in the Native Windows file system instead of the WSL filesystem. I will go into more detail later, but the WSL filesystem is accessible in Windows Explorer and shows up as a network drive. If you are unsure, go with WSL2.  [This process is already documented by Microsoft (includes troubleshooting guidelines).](https://docs.microsoft.com/en-us/windows/wsl/install-win10#step-1---enable-the-windows-subsystem-for-linux) Repeated here for completion's sake:
 
 Enable the windows feature called "Windows subsystem for Linux" by either checking the box in the GUI screen. You can get there by searching "Turn Windows features on or off" in the control panel search box. Do the same for the check box titled "virtual machine platform". you can enable these 2 features via the shell as well.
-
-![img](/images/2021/enable-wsl.png)
 
 OR open the power shell as administrator and run:
 

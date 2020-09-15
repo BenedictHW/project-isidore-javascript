@@ -35,7 +35,8 @@ export default function Post({ postData }) {
           </Link>
         </h2>
         <div className={utilStyles.articleMetadata}>
-          <Date dateString={postData.date} />
+          <Date dateString={postData.date} />{" "}
+          <h2 className={utilStyles.articleMetadata}>{postData.updated}</h2>
         </div>
         <hr />
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
