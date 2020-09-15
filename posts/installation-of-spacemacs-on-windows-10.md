@@ -152,6 +152,11 @@ If you get a message informing you that "adobe source code pro" cannot be found,
         explorer.exe .
 2.  WSL Filepath method. Location of these files is under "\\\wsl$". Click on windows explorer address bar at the top to input this address.
 
+3.  Tangentially related, but if you find that WSL2 uses too much system memory or want to set other configuration options, the [Microsoft WSL2 has enabled that via a .wslconfig file](https://docs.microsoft.com/en-us/windows/wsl/wsl-config#configure-global-options-with-wslconfig) located in your C:\Users\<yourUserName>\.wslconfig. My own configuration is as follows:
+
+        [wsl2]
+        memory=1GB # Limits VM memory in WSL 2 to 1 GB
+
 
 <a id="orgdb4b0d6"></a>
 
