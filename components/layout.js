@@ -12,23 +12,26 @@ export default function Layout({ children, home, notesPage, blogPage }) {
   return (
     <React.Fragment>
       <Navbar className="colorNavbar" sticky="top">
-        <Navbar.Brand href="/" className={utilStyles.titleNavbar}>
+        <Navbar.Brand href="/" className={utilStyles.headingNavbar}>
           Hanshen Wang
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="/about" className={utilStyles.headingNavbar}>
+            <Nav.Link href="/about" className={utilStyles.titleNavbar}>
               About
             </Nav.Link>
-            <Nav.Link href="/work" className={utilStyles.headingNavbar}>
+            <Nav.Link href="/work" className={utilStyles.titleNavbar}>
               Work
             </Nav.Link>
-            <Nav.Link href="/blog" className={utilStyles.headingNavbar}>
+            <Nav.Link href="/blog" className={utilStyles.titleNavbar}>
               Blog
             </Nav.Link>
-            <Nav.Link href="/contact" className={utilStyles.headingNavbar}>
+            <Nav.Link href="/contact" className={utilStyles.titleNavbar}>
               Contact
+            </Nav.Link>
+            <Nav.Link href="#top" className={utilStyles.headingNavbar}>
+              Back to Top
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
@@ -49,7 +52,7 @@ export default function Layout({ children, home, notesPage, blogPage }) {
           <meta name="og:title" content={siteTitle} />
           <meta name="twitter:card" content="summary_large_image" />
         </Head>
-        <main>{children}</main>
+        <main id="top">{children}</main>
         {blogPage && (
           <div className={styles.backToHome}>
             <Link href="/blog">
