@@ -1,5 +1,5 @@
 * Hanshen Wang's Website
-  Built with next.js and react-boostrap. See [[hanshenwang.com]].
+  Built with next.js and react-bootstrap. See [[hanshenwang.com]].
 
 
 
