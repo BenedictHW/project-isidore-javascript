@@ -6,8 +6,6 @@ import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 import Date from "../components/date";
 
-var pageLastEditDate = "[2021-01-30 Sat]";
-
 export default function Home() {
   return (
     <React.Fragment>

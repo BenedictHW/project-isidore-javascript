@@ -5,8 +5,6 @@ import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 import Date from "../components/date";
 
-const pageLastEditDate = "[2021-01-30 Sat]";
-
 export default function Home() {
   return (
     <Layout home>
@@ -37,11 +35,6 @@ export default function Home() {
               onclick="window.location.href = 'mailto:' + this.dataset.name + '@' + this.dataset.domain + '.' + this.dataset.tld; return false;"
             ></a>
           </section>
-        </div>
-        <div className="pageFooter">
-          <footer>
-            <p className="footerText">Page last edited: {pageLastEditDate}</p>
-          </footer>
         </div>
       </div>
       <style jsx global>{`
